@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ChatGPT-SelfHosted
+  vmImage: Terraform
 
 steps:
 - script: echo Hello, world!
