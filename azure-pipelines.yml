@@ -11,9 +11,8 @@ pool:
 
 steps:
 
-- task: DownloadBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'TerraformConfig'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'myArtifact'
+    publishLocation: 'pipeline'
