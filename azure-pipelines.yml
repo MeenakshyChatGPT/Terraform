@@ -14,7 +14,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)'
+    targetPath: 'C:\Users\EP722VZ\agent\_work\1\s'
     artifact: 'myArtifact'
     publishLocation: 'pipeline'
 
@@ -25,4 +25,6 @@ steps:
     script: |
       # Use PowerShell to display the value of the Build.ArtifactStagingDirectory variable
       Write-Host "Artifact Staging Directory: $(Build.ArtifactStagingDirectory)"
+      Write-Host "TargetPath" : $targetPath
+
 
