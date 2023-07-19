@@ -17,3 +17,7 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: 'myArtifact'
     publishLocation: 'pipeline'
+- script: |
+    # Use PowerShell to display the value of the Build.ArtifactStagingDirectory variable
+    Write-Host "Artifact Staging Directory: $(Build.ArtifactStagingDirectory)"
+  displayName: 'Show Artifact Staging Directory'
