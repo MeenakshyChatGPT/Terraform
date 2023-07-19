@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: Terraform
+  name : Terraform
 
 steps:
 
