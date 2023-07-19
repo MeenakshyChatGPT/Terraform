@@ -16,21 +16,16 @@ provider "azurerm" {
     }
 }
 
-resource "azurerm_resource_group" "main" {
-  name     = "az-tf-grp"
-  location = "East US"
-}
-
 resource "azurerm_virtual_network" "main" {
   name                = "az-tf-network"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
+  location            = "East US"
+  resource_group_name = "az-tf-grp"
 }
 
 resource "azurerm_subnet" "internal" {
   name                 = "internal"
-  resource_group_name  = azurerm_resource_group.main.name
+  resource_group_name  = "az-tf-grp"
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.0.2.0/24"]
 }
@@ -38,7 +33,7 @@ resource "azurerm_subnet" "internal" {
 resource "azurerm_network_interface" "main" {
   name                = "az-tf-nic"
   location            = "East US"
-  resource_group_name = azurerm_resource_group.main.name
+  resource_group_name = "az-tf-grp"
 
   ip_configuration {
     name                          = "internal"
@@ -49,8 +44,8 @@ resource "azurerm_network_interface" "main" {
 
 resource "azurerm_windows_virtual_machine" "main" {
   name                = "az-tf-vm"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = "az-tf-grp"
+  location            = "East US"
   size                = "Standard_F2"
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
@@ -73,8 +68,8 @@ resource "azurerm_windows_virtual_machine" "main" {
 
 resource "azurerm_storage_account" "main" {
   name                     = "azstorageaccount666"
-  resource_group_name      = azurerm_resource_group.main.name
-  location                 = azurerm_resource_group.main.location
+  resource_group_name      = "az-tf-grp"
+  location                 = "East US"
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
