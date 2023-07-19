@@ -10,6 +10,7 @@ pool:
   name : Terraform
 
 steps:
+- checkout: self
 
 - task: PublishPipelineArtifact@1
   inputs:
