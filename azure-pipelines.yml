@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name : Terraform
+
+steps:
+- checkout: self
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'C:\Users\EP722VZ\agent\_work\1\s'
+    artifact: 'myArtifact'
+    publishLocation: 'pipeline'
+
+- task: PowerShell@2
+  displayName: 'Show Artifact Staging Directory'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Use PowerShell to display the value of the Build.ArtifactStagingDirectory variable
+      Write-Host "Artifact Staging Directory: $(Build.ArtifactStagingDirectory)"
+      Write-Host "TargetPath" : $targetPath
+
+
