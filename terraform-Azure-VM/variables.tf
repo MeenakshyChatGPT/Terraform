@@ -9,7 +9,7 @@ variable "tenant_id" {
 }
 variable "client_id" {
   description = "This client id is part of Azure"
-  default = ""
+  default =  ""
 }
 variable "client_secret" {
   description = "This secret id is part of Azure"

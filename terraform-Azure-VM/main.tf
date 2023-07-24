@@ -1,13 +1,13 @@
 terraform {
-  cloud {
-    organization="Terraform_666"
-    workspaces{
-        name ="Terraform" 
+  required_providers {
+    azurerm={
+        source="hashicorp/azurerm"
+        version="3.65.0"
     }
   }
 }
+
 provider "azurerm" {
-  use_msi = true
   client_id       = var.client_id
   client_secret   = var.client_secret
   subscription_id = var.subscription_id
