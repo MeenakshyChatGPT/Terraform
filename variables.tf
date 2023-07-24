@@ -1,4 +1,21 @@
 
+variable "az_subscription_id" {
+  description = "This subscription_id is part of Azure"
+  default = ""
+}
+variable "az_tenant_id" {
+  description = "This tenant id is part of Azure"
+  default = ""
+}
+variable "az_client_id" {
+  description = "This client id is part of Azure"
+  default = ""
+}
+variable "az_client_secret" {
+  description = "This secret id is part of Azure"
+  default = ""
+}
+
 variable "prefix" {
   description = "This prefix will be included in the name of most resources."
   default = "az-tf"
