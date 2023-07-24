@@ -1,9 +1,9 @@
 terraform {
   cloud {
-        organization="Terraform_666"
-        workspaces{
-          name ="Terraform" 
-        }
+    organization="Terraform_666"
+    workspaces{
+        name ="Terraform" 
+    }
   }
 }
 provider "azurerm" {
