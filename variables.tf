@@ -1,11 +1,11 @@
 
 variable "subscription_id" {
   description = "This subscription_id is part of Azure"
-  default = ""
+  default = "36e59b87-569e-4a61-bae8-4e2f60f8ced7"
 }
 variable "tenant_id" {
   description = "This tenant id is part of Azure"
-  default = ""
+  default = "6c1408d5-cd77-4fe3-b27f-27308a9f311c"
 }
 variable "client_id" {
   description = "This client id is part of Azure"
