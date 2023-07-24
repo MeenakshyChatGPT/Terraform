@@ -1,17 +1,17 @@
 
-variable "az_subscription_id" {
+variable "subscription_id" {
   description = "This subscription_id is part of Azure"
   default = ""
 }
-variable "az_tenant_id" {
+variable "tenant_id" {
   description = "This tenant id is part of Azure"
   default = ""
 }
-variable "az_client_id" {
+variable "client_id" {
   description = "This client id is part of Azure"
   default = ""
 }
-variable "az_client_secret" {
+variable "client_secret" {
   description = "This secret id is part of Azure"
   default = ""
 }
